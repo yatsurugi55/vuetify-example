@@ -1,31 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+    <SidebarSample v-bind:value="drawer"></SidebarSample>
+    <HeaderSample v-bind:drawer="drawer" v-on:change="drawer = $event"></HeaderSample>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
+import SidebarSample from '@/components/organisms/SidebarSample.vue'
+import HeaderSample from '@/components/organisms/HeaderSample.vue'
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+export default {
+  data () {
+    return {
+      drawer: true
+    }
+  },
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+  components: {
+    SidebarSample,
+    HeaderSample
+  }
 }
-</style>
+</script>
