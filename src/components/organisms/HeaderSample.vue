@@ -7,27 +7,9 @@
 
 <script>
 export default {
-  props: {
-    drawer: {
-      type: Boolean,
-      default: true
-    }
-  },
-
-  computed: {
-    localDrawer: {
-      get: function () {
-        return this.drawer
-      },
-      set: function (value) {
-        this.$emit('change', value)
-      }
-    }
-  },
-
   methods: {
     handle () {
-      this.localDrawer = !this.localDrawer
+      this.$emit('change')
     }
   }
 }

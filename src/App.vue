@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <SidebarSample v-bind:value="drawer"></SidebarSample>
-    <HeaderSample v-bind:drawer="drawer" v-on:change="drawer = $event"></HeaderSample>
+    <HeaderSample v-on:change="handle"></HeaderSample>
     <v-main>
       <router-view></router-view>
     </v-main>
@@ -22,6 +22,12 @@ export default {
   components: {
     SidebarSample,
     HeaderSample
+  },
+
+  methods: {
+    handle () {
+      this.drawer = !this.drawer
+    }
   }
 }
 </script>
