@@ -6,10 +6,6 @@ node_modules
 .env.local
 .env.*.local
 .browserslistrc
-.editorconfig
-.eslintrc.js
-postcss.config.js
-vue.config.js
 
 # Log files
 npm-debug.log*
